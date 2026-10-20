@@ -2,7 +2,7 @@
 __pycache__/
 .env
 state/
-exports/*/
-!exports/.gitkeep
+exports/*/*
+!exports/*/_manifest.json
 *.pem
 *.db

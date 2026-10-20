@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-10-20T16:10:16.272462+00:00",
+  "tenant_id": "e445685f-b255-4c83-962e-ac52b06839f4",
+  "resources": {
+    "users": {
+      "status": "ok",
+      "count": 33
+    },
+    "groups": {
+      "status": "ok",
+      "count": 31
+    },
+    "applications": {
+      "status": "ok",
+      "count": 8
+    },
+    "servicePrincipals": {
+      "status": "ok",
+      "count": 210
+    },
+    "conditionalAccessPolicies": {
+      "status": "ok",
+      "count": 2
+    },
+    "namedLocations": {
+      "status": "ok",
+      "count": 4
+    },
+    "authenticationMethodsPolicy": {
+      "status": "ok",
+      "count": 1
+    },
+    "administrativeUnits": {
+      "status": "ok",
+      "count": 0
+    },
+    "directoryRoles": {
+      "status": "ok",
+      "count": 3
+    },
+    "subscribedSkus": {
+      "status": "ok",
+      "count": 5
+    },
+    "emCatalogs": {
+      "status": "ok",
+      "count": 1
+    },
+    "emAccessPackages": {
+      "status": "ok",
+      "count": 1
+    },
+    "emAssignmentPolicies": {
+      "status": "ok",
+      "count": 0
+    },
+    "accessReviewDefinitions": {
+      "status": "error",
+      "http_status": 403,
+      "detail": "{\"error\":{\"code\":\"\",\"message\":\"Attempted to perform an unauthorized operation.\",\"innerError\":{\"date\":\"2026-10-20T16:10:53\",\"request-id\":\"18f3662c-a212-4b74-a8cd-6a9eb52de8fb\",\"client-request-id\":\"18f3662c-a212-4b74-a8cd-6a9eb52de8fb\"}}}"
+    }
+  }
+}
