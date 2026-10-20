@@ -85,3 +85,39 @@ membership is the control plane. A termination cannot reach a
 downstream app faster than the dynamic rule re-evaluates, because
 membership is what drives provisioning. Measured at 42s here, plus
 license propagation on top.
+
+## Correction (2026-10-20, same day) - audit log supersedes polling
+
+The Entra audit log gives server-side timestamps for each license
+assignment. Creation-to-license lag measured from it:
+
+| User | Lag |
+|---|---|
+| probe run 1 | 32.5s |
+| probe run 2 | 48.9s |
+| probe run 3 | 38.6s |
+| 5 engineers, created within 7s | 15.6s, 16.5s, 23.1s, 88.8s, 92.6s |
+
+The earlier claim that membership consistently evaluated at 42s is
+withdrawn. Run 1's license landed at 32.5s, before polling first
+observed membership at 42s; since licensing depends on membership,
+membership resolved earlier than polling reported. The repeated 42s
+was a polling artifact, not an Entra evaluation cycle.
+
+Under a burst of five creates, lag spread from 16s to 93s - consistent
+with queued processing. Treat ~15-95s as the observed range.
+
+### Assignment path is mislabeled in this tenant
+
+The portal and Graph licenseAssignmentStates both report these
+licenses as Direct (assignedByGroup null). The audit log shows every
+license was assigned by CloudLicensingSystem, Microsoft's group-based
+licensing processor. The engine's service principal performed no
+license operations. Confirmed behaviorally: moving W0012 out of
+Engineering removed the license, actor CloudLicensingSystem.
+Excerpt: docs/evidence/phase1-license-audit-excerpt.csv
+
+### Instrument note
+
+Server-side audit timestamps beat client polling for latency work:
+sub-second precision, no observer effect. Use them for Phase 5.
