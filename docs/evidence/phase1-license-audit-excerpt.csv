@@ -1,0 +1,10 @@
+Date (UTC),Activity,ActorType,ActorDisplayName,Target1Type,Target1UserPrincipalName,Target1DisplayName,Target1ModifiedProperty1Name,AdditionalDetail1Value,CorrelationId
+2026-10-20T17:29:42.2018682Z,Change user license,Application,CloudLicensingSystem,User,j.park@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,d66392c7-9dc5-4258-b913-0130658482ef
+2026-10-20T17:29:37.0189471Z,Change user license,Application,CloudLicensingSystem,User,v.almeida@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,31b4134c-f24a-4012-be4d-ab7d0ea222ed
+2026-10-20T17:28:26.5526031Z,Change user license,Application,CloudLicensingSystem,User,m.oyelaran@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,6fb9280d-e1a8-4585-a94b-ac6f9b03d100
+2026-10-20T17:28:21.9868934Z,Change user license,Application,CloudLicensingSystem,User,d.okonkwo@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,ada9b24c-8762-4cea-97a6-f3328cd86415
+2026-10-20T17:28:21.7422653Z,Change user license,Application,CloudLicensingSystem,User,t.brennan@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,4f1bb961-bf88-4ef6-bde0-d77ef8fb7408
+2026-10-20T17:15:59.8675321Z,Change user license,Application,CloudLicensingSystem,User,idp-latency-probe-171505@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,d89b408b-61ed-4fe9-a797-da82c9db2fd0
+2026-10-20T17:12:44.318045Z,Change user license,Application,CloudLicensingSystem,User,idp-latency-probe-171139@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,3ffea4f9-1ea6-4147-a81e-ffa1da4abe5f
+2026-10-20T17:08:08.7355738Z,Change user license,Application,CloudLicensingSystem,User,idp-latency-probe-170720@lodsm017097.onmicrosoft.com,,AssignedLicense,MCAPICommercialProductLicensing,b534a1b8-2c18-4c36-b4bb-341e4937dc9c
+2026-10-20T17:05:43.2204305Z,Set group license,Application,CloudLicensingSystem,Group,,IDP-Dept-Engineering,GroupLicenseAssignment,MCAPICommercialProductLicensing,9e7a288a-6b13-432d-abcd-3ab4be472b1d
