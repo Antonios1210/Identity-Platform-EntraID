@@ -191,7 +191,7 @@ def desired_user(worker, today):
 # diff
 # --------------------------------------------------------------------------
 
-def diff(workers, owned, all_upns, cfg, state):
+def diff(workers, owned, all_upns, cfg, state, full_snapshot=True):
     today = datetime.date.today().isoformat()
     ops, halts = [], []
 
@@ -263,12 +263,16 @@ def diff(workers, owned, all_upns, cfg, state):
                           f"{existing['userPrincipalName']}  {summary}",
                           {"id": existing["id"], **drift}))
 
-    for worker_id, users in owned.items():
-        if worker_id not in by_worker_id:
-            for user in users:
-                ops.append(Op("ORPHAN", worker_id,
-                              f"{user['userPrincipalName']} has a workerId "
-                              "with no matching HR record"))
+    # Orphan detection needs the whole HR population. A delta only contains
+    # workers who changed, so everyone else would look like they had left.
+    # A delta can prove presence; only a full snapshot can prove absence.
+    if full_snapshot:
+        for worker_id, users in owned.items():
+            if worker_id not in by_worker_id:
+                for user in users:
+                    ops.append(Op("ORPHAN", worker_id,
+                                  f"{user['userPrincipalName']} has a "
+                                  "workerId with no matching HR record"))
 
     ops.sort(key=lambda op: (OP_ORDER.get(op.kind, 5), op.worker_id))
     return ops, halts
@@ -447,7 +451,8 @@ def main():
     hr = fetch_hr(since)
     workers = hr["workers"]
     owned, all_upns = live_state(cfg["extension"])
-    ops, halts = diff(workers, owned, all_upns, cfg, state)
+    ops, halts = diff(workers, owned, all_upns, cfg, state,
+                      full_snapshot=since is None)
 
     if args.json:
         print(json.dumps({

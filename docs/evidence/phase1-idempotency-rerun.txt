@@ -1,0 +1,8 @@
+﻿correlation id : ffc1bfcf-fcfa-4385-91b1-f17fcba546a0
+mode           : plan only
+since          : (full snapshot)
+hr workers     : 16
+entra owned    : 15
+audit log      : logs\audit-2026-10-20.jsonl
+
+no changes. Entra matches HR.
