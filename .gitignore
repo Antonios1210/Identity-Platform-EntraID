@@ -6,3 +6,4 @@ exports/*/*
 !exports/*/_manifest.json
 *.pem
 *.db
+logs/
