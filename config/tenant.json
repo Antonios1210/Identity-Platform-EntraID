@@ -1,0 +1,32 @@
+{
+  "_comment": [
+    "Declarative definition of every Entra object the engine depends on.",
+    "No GUIDs here. Objects are named; IDs are resolved at runtime and",
+    "cached in state/tenant-objects.json, which is gitignored because it",
+    "is tenant-specific. Run bootstrap-tenant.py against a fresh tenant",
+    "and this file rebuilds all of it.",
+    "",
+    "Every dynamic rule carries a workerId clause. Without it the rules",
+    "match Contoso's prebuilt users and exhaust the 20 license seats."
+  ],
+
+  "prefix": "IDP",
+
+  "departments": [
+    "Engineering",
+    "Sales",
+    "Finance",
+    "Operations",
+    "Executive"
+  ],
+
+  "licensed_department": "Engineering",
+
+  "license_sku_part_number": "Office_365_E3_(no_Teams)",
+
+  "birthright_group": {
+    "displayName": "IDP-All-Workers",
+    "description": "Every worker the sync engine manages. Assigned, not dynamic.",
+    "dynamic": false
+  }
+}
