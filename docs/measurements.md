@@ -121,3 +121,32 @@ Excerpt: docs/evidence/phase1-license-audit-excerpt.csv
 
 Server-side audit timestamps beat client polling for latency work:
 sub-second precision, no observer effect. Use them for Phase 5.
+
+## 2026-10-22 - Phase 2: first Entra provisioning cycle into the SCIM app
+
+Times from the SCIM app's own request log (UTC).
+
+| Event | Time |
+|---|---|
+| Provisioning turned on in Entra | 20:22 |
+| First create (delphine.okonkwo) | 20:22:14.70 |
+| Last create (j.park) | 20:22:16.70 |
+
+The initial cycle started within seconds of enabling provisioning and
+created 12 users in about 2 seconds. Each create was preceded by a
+GET /Users?filter=userName eq "..." existence check. Requests came from
+40.126.4.44 (Microsoft provisioning service) through the Cloudflare tunnel.
+
+The "every 20-40 minutes" interval in the portal applies to later
+incremental cycles, not the first one. That interval is what bounds
+revocation latency to the app, and is still to be measured.
+
+Two workers were not provisioned: W0011 (pre-hire) and W0013 (on leave),
+both disabled in Entra. Reason to be confirmed from provisioning logs.
+
+Confirmed from provisioning logs: W0011 skipped with SkipReason
+NotEffectivelyEntitled ("not active in the source system"). Assigned to
+the app = True, IsInProvisioningScope = True, IsActive = False. Entra does
+not create app accounts for disabled users even when they are in scope.
+A pre-hire's app account is therefore created on the first cycle after
+the engine enables them on their start date.

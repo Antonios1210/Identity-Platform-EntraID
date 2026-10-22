@@ -1,0 +1,18 @@
+﻿
+userName                                         externalId active
+--------                                         ---------- ------
+d.okonkwo@lodsm017097.onmicrosoft.com            W0007        True
+delphine.okonkwo@lodsm017097.onmicrosoft.com     W0008        True
+v.almeida@lodsm017097.onmicrosoft.com            W0010        True
+d.whitfield@lodsm017097.onmicrosoft.com          W0001        True
+e.papadopoulou@lodsm017097.onmicrosoft.com       W0004        True
+m.oyelaran@lodsm017097.onmicrosoft.com           W0002        True
+z.muller-sondergaard@lodsm017097.onmicrosoft.com W0009        True
+k.voulgari@lodsm017097.onmicrosoft.com           W0016        True
+p.raghunathan@lodsm017097.onmicrosoft.com        W0003        True
+t.brennan@lodsm017097.onmicrosoft.com            W0005        True
+a.nakamura@lodsm017097.onmicrosoft.com           W0006        True
+n.haddad@lodsm017097.onmicrosoft.com             W0015        True
+j.park@lodsm017097.onmicrosoft.com               W0012        True
+
+
