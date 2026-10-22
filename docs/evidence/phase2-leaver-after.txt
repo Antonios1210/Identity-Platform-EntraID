@@ -1,0 +1,6 @@
+﻿
+userName                              externalId active
+--------                              ---------- ------
+v.almeida@lodsm017097.onmicrosoft.com W0010       False
+
+

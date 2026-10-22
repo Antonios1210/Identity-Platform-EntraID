@@ -1,0 +1,21 @@
+﻿{
+    "worker_id":  "W0010",
+    "employee_id":  null,
+    "first_name":  "Victor",
+    "last_name":  "Almeida",
+    "preferred_name":  null,
+    "legal_name":  "Victor Almeida",
+    "department":  "Engineering",
+    "cost_center":  "CC-200",
+    "job_title":  "Contract Developer",
+    "manager_worker_id":  "W0005",
+    "location":  "Remote",
+    "worker_type":  "contractor",
+    "status":  "terminated",
+    "hire_date":  "2026-06-22",
+    "start_date":  "2026-06-22",
+    "termination_date":  "2026-10-22",
+    "leave_start":  null,
+    "leave_end":  null,
+    "updated_at":  "2026-10-22T20:42:49.455960+00:00"
+}

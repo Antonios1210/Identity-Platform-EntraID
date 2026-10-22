@@ -98,8 +98,29 @@ def scim_ok(body, status=200):
                         media_type="application/scim+json")
 
 
+def normalize_manager(resource):
+    """
+    RFC 7643: enterprise 'manager' is a complex attribute {"value": id}.
+    Entra sends it in PATCH as a bare id string. Storing that string and
+    returning it later makes Entra fail to deserialize the user during
+    matching - which silently blocks every update, including deactivation.
+    """
+    ext = resource.get(ENTERPRISE)
+    if not isinstance(ext, dict) or "manager" not in ext:
+        return resource
+    manager = ext["manager"]
+    if isinstance(manager, str):
+        if manager:
+            ext["manager"] = {"value": manager}
+        else:
+            ext.pop("manager")
+    elif manager is None:
+        ext.pop("manager")
+    return resource
+
+
 def to_resource(row):
-    resource = json.loads(row["resource"])
+    resource = normalize_manager(json.loads(row["resource"]))
     resource["id"] = row["id"]
     resource["active"] = bool(row["active"])
     resource["meta"] = {
@@ -285,8 +306,8 @@ async def create_user(request: Request, authorization: str = Header(None)):
     user_id = str(uuid.uuid4())
     stamp = now()
     active = coerce(body.get("active", True))
-    resource = {k: v for k, v in body.items()
-                if k not in ("id", "meta", "active")}
+    resource = normalize_manager({k: v for k, v in body.items()
+                                  if k not in ("id", "meta", "active")})
 
     conn.execute(
         "INSERT INTO users (id, user_name, external_id, active, "
@@ -335,6 +356,7 @@ async def patch_user(user_id: str, request: Request,
             for attr, attr_value in value.items():
                 apply_path(resource, attr, attr_value)
 
+    normalize_manager(resource)
     active = bool(coerce(resource.pop("active", True)))
     resource.pop("id", None)
     resource.pop("meta", None)

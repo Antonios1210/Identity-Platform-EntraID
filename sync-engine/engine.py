@@ -211,7 +211,7 @@ def diff(workers, owned, all_upns, cfg, state, full_snapshot=True):
             continue
 
         if not should_have_account(worker):
-            if matches:
+            if matches and matches[0].get("accountEnabled"):
                 ops.append(Op("DISABLE_USER", wid,
                               f"{matches[0]['userPrincipalName']} "
                               f"(status={worker['status']})",

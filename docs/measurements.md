@@ -150,3 +150,36 @@ the app = True, IsInProvisioningScope = True, IsActive = False. Entra does
 not create app accounts for disabled users even when they are in scope.
 A pre-hire's app account is therefore created on the first cycle after
 the engine enables them on their start date.
+
+## 2026-10-22 - Phase 2: leaver end to end (W0010, Victor Almeida)
+
+App-side timestamps from the SCIM app's own log; Entra-side from audit
+and provisioning logs. All UTC.
+
+| Hop | Time | From T1 |
+|---|---|---|
+| T0: HR terminates W0010 | 20:42:49 | |
+| T1: engine disables Entra account, revokes sessions | 20:43:45 | 0 |
+| Provisioning cycle 1 attempts update, fails | 21:02:23 | 18m 38s |
+| T2: app deactivates account (soft delete) | 21:20:03 | 36m 18s |
+
+Result: terminated contractor removed from the app with no manual
+action in the app. Account soft-deleted, history retained.
+
+Cycle 1 failed on an app defect: the SCIM app stored the enterprise
+'manager' attribute as a bare string, as Entra sent it in PATCH, instead
+of the complex {"value": id} that RFC 7643 requires. On the next read
+Entra could not deserialize the user, failed the match step
+(SystemForCrossDomainIdentityManagementServiceIncompatible), and never
+sent active=false. The app logged 200 OK throughout; only the Entra
+provisioning log showed the failure. It affected every user with a
+manager (12 of 13), so terminations were silently blocked for nearly
+everyone. Fixed by normalizing manager on write and on read.
+
+Real-world exposure window: 36m 18s, doubled by one integration defect.
+Without the defect, deactivation would have landed on cycle 1, ~18.6
+minutes after T1. Observed interval between cycles: ~18 minutes.
+A clean leaver with no defects is still to be measured.
+
+Victor kept his E3 license after termination: the Engineering dynamic
+rule checks department and workerId, not accountEnabled.
