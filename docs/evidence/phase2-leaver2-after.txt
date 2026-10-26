@@ -1,0 +1,6 @@
+﻿
+userName                               externalId active
+--------                               ---------- ------
+k.voulgari@lodsm017097.onmicrosoft.com W0016       False
+
+

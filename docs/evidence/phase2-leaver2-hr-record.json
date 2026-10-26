@@ -1,0 +1,21 @@
+﻿{
+    "worker_id":  "W0016",
+    "employee_id":  "100016",
+    "first_name":  "Katerina",
+    "last_name":  "Voulgari",
+    "preferred_name":  null,
+    "legal_name":  "Katerina Voulgari",
+    "department":  "Finance",
+    "cost_center":  "CC-400",
+    "job_title":  "Financial Analyst",
+    "manager_worker_id":  "W0004",
+    "location":  "Nashville",
+    "worker_type":  "employee",
+    "status":  "terminated",
+    "hire_date":  "2026-10-20",
+    "start_date":  "2026-10-20",
+    "termination_date":  "2026-10-26",
+    "leave_start":  null,
+    "leave_end":  null,
+    "updated_at":  "2026-10-26T13:12:40.940864+00:00"
+}

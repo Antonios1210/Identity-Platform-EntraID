@@ -183,3 +183,31 @@ A clean leaver with no defects is still to be measured.
 
 Victor kept his E3 license after termination: the Engineering dynamic
 rule checks department and workerId, not accountEnabled.
+
+## 2026-10-26 - Phase 2: clean leaver (W0016, Katerina Voulgari)
+
+No defects in the path. App-side times from the SCIM app's log file,
+Entra-side from audit and provisioning logs. All UTC.
+
+| Event | Time | From T1 |
+|---|---|---|
+| T0: HR terminates W0016 | 13:12:40 | |
+| Cycle n starts (probe) | 13:11:47 | -93s |
+| T1: engine disables Entra account | 13:13:20 | 0 |
+| Cycle n+1 starts (probe) | 13:32:13 | 18m 54s |
+| T2: app deactivates account | 13:32:16 | 18m 57s |
+
+Clean Entra-to-app latency: 18m 57s. Cycle interval observed: 20m 26s.
+Once a cycle starts, deactivation lands in about 3 seconds; nearly all
+of the latency is waiting for the next cycle. This leaver missed a
+cycle by 93s, so this is close to the worst case for this hop.
+
+Consistent with W0010: its first (failed) attempt came 18m 38s after
+its T1. Two independent leavers, same result: about 19 minutes.
+
+Real-world revocation latency to the app = engine run interval +
+up to one provisioning cycle (~20 min). The engine interval is a
+design choice; the provisioning cycle is not.
+
+IDs aligned across systems: Entra 686f3747 (engine trace, provisioning
+source), app 06ad29ba (SCIM log, provisioning target).

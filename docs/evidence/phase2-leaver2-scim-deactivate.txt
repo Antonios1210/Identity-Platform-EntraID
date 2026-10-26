@@ -1,0 +1,17 @@
+﻿
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:6:{"ts": "2026-10-26T13:13:55.094314+00:00", "event": 
+"list", "filter": null, "results": 13}
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:7:INFO:     66.234.152.203:0 - "GET /scim/v2/Users 
+HTTP/1.1" 200 OK
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:8:{"ts": "2026-10-26T13:32:13.936444+00:00", "event": 
+"list", "filter": "userName eq \"ade14f6f-c383-4b7a-bcae-b80ef396698c\"", "results": 0}
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:9:INFO:     20.190.130.42:0 - "GET 
+/scim/v2/Users?filter=userName+eq+%22ade14f6f-c383-4b7a-bcae-b80ef396698c%22 HTTP/1.1" 200 OK
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:10:INFO:     20.190.130.42:0 - "GET 
+/scim/v2/Users/06ad29ba-88b8-440e-8a18-44654d55ef5a HTTP/1.1" 200 OK
+> C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:11:{"ts": "2026-10-26T13:32:16.923385+00:00", "event": 
+"deactivate", "id": "06ad29ba-88b8-440e-8a18-44654d55ef5a", "userName": "k.voulgari@lodsm017097.onmicrosoft.com"}
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:12:{"ts": "2026-10-26T13:32:16.941011+00:00", "event": 
+"patch", "id": "06ad29ba-88b8-440e-8a18-44654d55ef5a", "ops": 1}
+
+
