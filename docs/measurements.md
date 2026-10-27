@@ -211,3 +211,36 @@ design choice; the provisioning cycle is not.
 
 IDs aligned across systems: Entra 686f3747 (engine trace, provisioning
 source), app 06ad29ba (SCIM log, provisioning target).
+
+## 2026-10-27 - Phase 2: mover into the app (W0008, Delphine Okonkwo, Sales to Engineering)
+
+| Event | Time (UTC) | From T1 |
+|---|---|---|
+| Cycle starts (probe) | 14:27:36 | -1m 48s |
+| T0: HR changes department and cost center | 14:28:48 | |
+| T1: engine updates department in Entra | 14:29:24 | 0 |
+| T2: app receives the update | 14:47:40 | 18m 17s |
+
+Department reached the app with no manual action in the app. Separately,
+Delphine joined IDP-Dept-Engineering and gained an E3 license within ~2
+minutes, reported as assigned by the group (not Direct). Licenses from
+the initial 10/20 burst still report Direct through the same group, so
+the assignment-path label is inconsistent, not uniformly wrong.
+
+Entra sent two changes, not one: department, plus emails[work]. The
+engine changed only department. Chain: department -> dynamic group ->
+E3 license -> Exchange mailbox -> mail attribute -> app email. One HR
+change rippled through five systems.
+
+Confirmed across all users: everyone who has had a mailbox has an email
+in the app; never-licensed users have none. W0012 (Jun) shows an email
+with no current license: licensed for minutes on 10/20, then moved. The
+mail attribute outlived the license, so the app holds a work address
+that may not receive mail.
+
+Cycle intervals observed: 20m 26s and 19m 35s (10/26). Three lifecycle
+events (two leavers, one mover) all reached the app 18-19 minutes after
+Entra changed, each having just missed a cycle.
+
+HR record partial update noted: title and manager unchanged after the
+department move (still Account Executive, still reporting to Sales).

@@ -1,0 +1,10 @@
+﻿
+
+userName   : delphine.okonkwo@lodsm017097.onmicrosoft.com
+externalId : W0008
+active     : True
+department : Sales
+id         : 2e630981-6782-473c-98a8-f13ca9b697ec
+
+
+

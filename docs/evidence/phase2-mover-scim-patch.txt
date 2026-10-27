@@ -1,0 +1,15 @@
+﻿
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:24:INFO:     69.14.24.169:0 - "GET /scim/v2/Users 
+HTTP/1.1" 200 OK
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:25:{"ts": "2026-10-27T14:47:37.550896+00:00", "event": 
+"list", "filter": "userName eq \"14dd4c2f-aa3e-4b7a-9f7e-0694459818bf\"", "results": 0}
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:26:INFO:     20.190.131.43:0 - "GET 
+/scim/v2/Users?filter=userName+eq+%2214dd4c2f-aa3e-4b7a-9f7e-0694459818bf%22 HTTP/1.1" 200 OK
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:27:INFO:     20.190.131.43:0 - "GET 
+/scim/v2/Users/2e630981-6782-473c-98a8-f13ca9b697ec HTTP/1.1" 200 OK
+> C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:28:{"ts": "2026-10-27T14:47:40.995546+00:00", "event": 
+"patch", "id": "2e630981-6782-473c-98a8-f13ca9b697ec", "ops": 2}
+  C:\Users\anton\Desktop\Entra_ID_Project\logs\scim-app.log:29:INFO:     20.190.131.43:0 - "PATCH 
+/scim/v2/Users/2e630981-6782-473c-98a8-f13ca9b697ec HTTP/1.1" 200 OK
+
+

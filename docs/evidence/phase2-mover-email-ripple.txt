@@ -1,0 +1,18 @@
+﻿
+userName                                         email                                           
+--------                                         -----                                           
+d.okonkwo@lodsm017097.onmicrosoft.com            d.okonkwo@lodsm017097.onmicrosoft.com           
+delphine.okonkwo@lodsm017097.onmicrosoft.com     delphine.okonkwo@lodsm017097.onmicrosoft.com    
+v.almeida@lodsm017097.onmicrosoft.com            v.almeida@lodsm017097.onmicrosoft.com           
+d.whitfield@lodsm017097.onmicrosoft.com                                                          
+e.papadopoulou@lodsm017097.onmicrosoft.com                                                       
+m.oyelaran@lodsm017097.onmicrosoft.com           m.oyelaran@lodsm017097.onmicrosoft.com          
+z.muller-sondergaard@lodsm017097.onmicrosoft.com z.muller-sondergaard@lodsm017097.onmicrosoft.com
+k.voulgari@lodsm017097.onmicrosoft.com                                                           
+p.raghunathan@lodsm017097.onmicrosoft.com                                                        
+t.brennan@lodsm017097.onmicrosoft.com            t.brennan@lodsm017097.onmicrosoft.com           
+a.nakamura@lodsm017097.onmicrosoft.com                                                           
+n.haddad@lodsm017097.onmicrosoft.com                                                             
+j.park@lodsm017097.onmicrosoft.com               j.park@lodsm017097.onmicrosoft.com              
+
+
