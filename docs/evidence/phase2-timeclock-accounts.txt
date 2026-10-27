@@ -1,0 +1,16 @@
+﻿
+emp_no login                full_name                 dept        is_active
+------ -----                ---------                 ----        ---------
+     1 d.whitfield          Dana Whitfield            Executive        True
+     2 m.oyelaran           Marcus Oyelaran           Engineering      True
+     3 p.raghunathan        Priya Raghunathan         Sales            True
+     4 e.papadopoulou       Eleni Papadopoulou        Finance          True
+     5 t.brennan            Tomas Brennan             Engineering      True
+     6 a.nakamura           Aisha Nakamura            Operations       True
+     7 d.okonkwo            Daniel Okonkwo            Engineering      True
+     8 delphine.okonkwo     Delphine Okonkwo          Engineering      True
+     9 z.muller-sondergaard Zoë Müller-Søndergaard Engineering      True
+    10 j.park               Jun Park                  Sales            True
+    11 n.haddad             Nadia Haddad              Operations       True
+
+

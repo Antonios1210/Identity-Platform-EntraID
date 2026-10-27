@@ -1,0 +1,13 @@
+﻿
+  logs\scim-app.log:48:{"ts": "2026-10-27T16:47:46.514090+00:00", "event": "list", "filter": "userName eq 
+\"f5b111d2-8561-4d93-837e-2aba4aa6ab5a\"", "results": 0}
+  logs\scim-app.log:49:INFO:     20.190.131.46:0 - "GET 
+/scim/v2/Users?filter=userName+eq+%22f5b111d2-8561-4d93-837e-2aba4aa6ab5a%22 HTTP/1.1" 200 OK
+  logs\scim-app.log:50:INFO:     20.190.131.46:0 - "GET /scim/v2/Users/8a402869-91ab-44fc-a2e2-063c2a2a6e01 HTTP/1.1" 
+200 OK
+> logs\scim-app.log:51:{"ts": "2026-10-27T16:47:49.174506+00:00", "event": "deactivate", "id": 
+"8a402869-91ab-44fc-a2e2-063c2a2a6e01", "userName": "j.park@lodsm017097.onmicrosoft.com"}
+  logs\scim-app.log:52:{"ts": "2026-10-27T16:47:49.186485+00:00", "event": "patch", "id": 
+"8a402869-91ab-44fc-a2e2-063c2a2a6e01", "ops": 1}
+
+

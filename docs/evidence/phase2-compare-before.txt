@@ -1,0 +1,18 @@
+﻿PORTAL:
+
+
+userName   : j.park@lodsm017097.onmicrosoft.com
+externalId : W0012
+active     : True
+
+
+
+TIMECLOCK:
+
+
+emp_no    : 10
+login     : j.park
+is_active : True
+
+
+

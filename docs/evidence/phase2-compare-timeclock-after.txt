@@ -1,0 +1,9 @@
+﻿
+
+emp_no         : 10
+login          : j.park
+is_active      : False
+deactivated_at : 2026-10-27T16:31:51.171350+00:00
+
+
+

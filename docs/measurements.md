@@ -244,3 +244,34 @@ Entra changed, each having just missed a cycle.
 
 HR record partial update noted: title and manager unchanged after the
 department move (still Account Executive, still reporting to Sales).
+
+## 2026-10-27 - Phase 2: comparison, custom connector vs Entra provisioning (W0012, Jun Park)
+
+One termination, two apps, two paths. All UTC. Timeclock time from its
+own deactivated_at field; Portal time from the SCIM app's log file.
+
+| Event | Time | From T0 |
+|---|---|---|
+| T0: HR terminates W0012 | 16:31:27.9 | |
+| Timeclock deactivated (custom connector, HR-driven) | 16:31:51.2 | 23s |
+| T1: engine disables Entra account | 16:32:52.3 | 1m 24s |
+| Portal deactivated (Entra SCIM provisioning) | 16:47:49.2 | 16m 21s |
+
+The connector revoked Timeclock 61 seconds BEFORE Entra was disabled:
+under the design, HR alone can revoke, so the direct path never waits on
+Entra. The 23s is manual command time; scheduled, it equals the
+connector's run interval.
+
+Portal took 14m 57s from T1, landing on the predicted cycle (~20 min
+spacing from 14:27:36). This termination fell mid-gap, so it waited less
+than the two earlier leavers (18m 57s, 36m 18s with the defect).
+
+Tradeoff: Entra's path is slower, but Microsoft owns scheduling, retries
+and error handling. The connector is ~42x faster here, and in exchange
+the engine owns all of it, plus the link table (correlation state the
+app cannot hold).
+
+Timeclock's API omits a charset, so Windows PowerShell's
+Invoke-RestMethod decodes its JSON as Latin-1 (ZoÃ« instead of Zoë).
+Stored data is correct: the connector's no-change plan proves the stored
+full_name matches HR. Known vendor-style quirk, left as is.
